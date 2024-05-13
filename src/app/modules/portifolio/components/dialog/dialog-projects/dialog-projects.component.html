@@ -1,0 +1,17 @@
+<header>
+    <h2>{{getData()?.title}}</h2>
+    <button mat-button mat-dialog-close>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
+    </button>
+</header>
+
+<mat-dialog-content>
+    <h3>Descrição</h3>
+    <article [innerHTML]="getData()?.description"></article>
+
+    <nav>
+        @for (item of getData()?.links; track item) {
+            <a [href]="item.href" target="_blank" class="btn btn-primary">{{item.name}}</a>
+        }
+    </nav>
+</mat-dialog-content>

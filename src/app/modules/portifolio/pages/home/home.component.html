@@ -1,0 +1,19 @@
+<app-header></app-header>
+<main>
+    <app-knowledge></app-knowledge>
+    <app-experiences></app-experiences>
+
+    @defer (on viewport) {
+
+        <app-projects></app-projects>
+    }@placeholder {
+        <section>
+            <h2>carregamento de projetos....</h2>
+        </section>
+
+    }@error {
+        <section>
+            <h2>Infelzimetne ocorreu um erro ....</h2>
+        </section>
+    }
+</main>
